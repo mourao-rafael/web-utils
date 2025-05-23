@@ -1,11 +1,24 @@
-import { Button } from "@/components/ui/button"
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Header from './components/Header';
+// import QrCodeGenerator from './pages/QrCodeGenerator';
+// import VideoDownloader from './pages/VideoDownloader';
 
 function App() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-svh cursor-pointer">
-      <Button>Click me</Button>
+    <div>
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+
+          {/* Create routes: */}
+          {/* <Route path="/qr-code" element={<QrCodeGenerator />} /> */}
+          {/* <Route path="/video-downloader" element={<VideoDownloader />} /> */}
+        </Routes>
+      </BrowserRouter>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
