@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Header from './components/Header';
 // import QrCodeGenerator from './pages/QrCodeGenerator';
-// import VideoDownloader from './pages/VideoDownloader';
+import VideoDownloader from './pages/VideoDownloader';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
 
           {/* Create routes: */}
           {/* <Route path="/qr-code" element={<QrCodeGenerator />} /> */}
-          {/* <Route path="/video-downloader" element={<VideoDownloader />} /> */}
+          <Route path="/video-downloader" element={<VideoDownloader />} />
         </Routes>
       </BrowserRouter>
     </div>

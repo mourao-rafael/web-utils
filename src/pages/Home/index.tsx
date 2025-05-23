@@ -2,14 +2,23 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import type { Key } from 'react';
 
-const tools = [
+type Tool = {
+  title: String;
+  description: String;
+  path: Key;
+  icon: String;
+  badge?: String;
+};
+
+const tools: Tool[] = [
   {
     title: 'Gerador de QR Code',
     description: 'Crie QR Codes personalizados a partir de qualquer texto ou link.',
     path: '/qr-code',
     icon: '🔳',
-    badge: 'Novo',
+    // badge: 'Novo',
   },
   {
     title: 'Baixar Vídeo',
@@ -39,7 +48,7 @@ const Home = () => {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">{tool.description}</p>
-              <Link to={tool.path}>
+              <Link to={tool.path as string}>
                 <Button>Ir para ferramenta</Button>
               </Link>
             </CardContent>
