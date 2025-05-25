@@ -5,9 +5,13 @@ import QrCodeGenerator from './pages/QrCodeGenerator';
 import VideoDownloader from './pages/VideoDownloader';
 
 function App() {
+  const basename = import.meta.env.PROD
+    ? import.meta.env.BASE_URL.replace(/\/$/, '')
+    : '/';
+
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

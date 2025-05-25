@@ -33,7 +33,7 @@ const Home = () => {
   return (
     <div className="max-w-5xl mx-auto px-4 py-10">
       <h1 className="flex items-center justify-center gap-2 text-4xl font-bold mb-4 text-center">
-        <img src='/favicon.ico' alt="Logo Utilitários" className="w-14 h-14" />
+        <img src={import.meta.env.BASE_URL + '/favicon.ico'} alt="Logo Utilitários" className="w-14 h-14" />
         Utilitários Online
         </h1>
       <p className="text-muted-foreground text-center mb-10">

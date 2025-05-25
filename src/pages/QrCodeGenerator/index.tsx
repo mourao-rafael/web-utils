@@ -31,7 +31,7 @@ const QrCodeGenerator = () => {
   const [logoWidth, setLogoWidth] = useState(50);
   const [logoHeight, setLogoHeight] = useState(50);
   const [borderRadius, setBorderRadius] = useState(5);
-  const [qrStyle, setQrStyle] = useState<'fluid' | 'dots' | 'squares'>('fluid');
+  const [qrStyle, setQrStyle] = useState<'fluid' | 'dots' | 'squares'>('squares');
   const [eyeRadius, setEyeRadius] = useState(5);
   const [size, setSize] = useState(200);
   const [fgColor, setFgColor] = useState('#000000');
