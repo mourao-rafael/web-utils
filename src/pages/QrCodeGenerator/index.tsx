@@ -54,7 +54,34 @@ const QrCodeGenerator = () => {
     if (!containerRef.current) return;
     const canvas = containerRef.current.querySelector('canvas');
     if (!canvas) return;
-    const url = (canvas as HTMLCanvasElement).toDataURL('image/png');
+
+    // Put border radius on canvas:
+    const borderedCanvas = document.createElement('canvas');
+    borderedCanvas.width = canvas.width;
+    borderedCanvas.height = canvas.height;
+
+    // Draw bordered rectangle:
+    const ctx = borderedCanvas.getContext('2d')!;
+    ctx.fillStyle = bgColor;
+    ctx.beginPath();
+    ctx.moveTo(borderRadius, 0);
+    ctx.lineTo(canvas.width - borderRadius, 0);
+    ctx.quadraticCurveTo(canvas.width, 0, canvas.width, borderRadius);
+    ctx.lineTo(canvas.width, canvas.height - borderRadius);
+    ctx.quadraticCurveTo(canvas.width, canvas.height, canvas.width - borderRadius, canvas.height);
+    ctx.lineTo(borderRadius, canvas.height);
+    ctx.quadraticCurveTo(0, canvas.height, 0, canvas.height - borderRadius);
+    ctx.lineTo(0, borderRadius);
+    ctx.quadraticCurveTo(0, 0, borderRadius, 0);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.clip();
+    ctx.drawImage(canvas, 0, 0); // draw original canvas on top
+
+
+
+    const url = (borderedCanvas as HTMLCanvasElement).toDataURL('image/png');
     const a = document.createElement('a');
     a.href = url;
     a.download = 'qrcode.png';
