@@ -26,6 +26,13 @@ const tools: Tool[] = [
     path: '/video-downloader',
     icon: '📥',
   },
+  {
+    title: 'Seletor de Emoji',
+    description: 'Encontre e copie emojis facilmente para suas mensagens e textos.',
+    path: '/emoji-picker',
+    icon: '😀',
+    badge: 'Novo',
+  },
   // Adicione mais ferramentas conforme necessário
 ];
 
