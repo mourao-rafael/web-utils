@@ -31,9 +31,15 @@ const tools: Tool[] = [
     description: 'Encontre e copie emojis facilmente para suas mensagens e textos.',
     path: '/emoji-picker',
     icon: '😀',
-    badge: 'Novo',
+    // badge: 'Novo',
   },
-  // Adicione mais ferramentas conforme necessário
+  {
+    title: 'Gerador de Link WhatsApp',
+    description: 'Crie links de WhatsApp personalizados para compartilhar.',
+    path: '/whatsapp-link',
+    icon: '💬',
+    // badge: 'Novo',
+  },
 ];
 
 const Home = () => {
