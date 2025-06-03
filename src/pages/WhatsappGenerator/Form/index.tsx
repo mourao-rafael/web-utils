@@ -49,8 +49,8 @@ const Form = ({ phoneNumber, setPhoneNumber, link, message, setMessage }: FormPr
           />
         </div>
 
-        <Button asChild className="w-full">
-          <a className="flex gap-1 text-center" href={link} target='_blank' rel='noopener noreferrer'>
+        <Button asChild className="w-full flex gap-1 text-center items-start">
+          <a className="" href={link} target='_blank' rel='noopener noreferrer'>
             Testar link <ExternalLink />
           </a>
         </Button>
