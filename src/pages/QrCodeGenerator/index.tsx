@@ -23,7 +23,7 @@ import {
   SelectItem,
 } from '@/components/ui/select';
 import { Download, X } from 'lucide-react';
-import LabelTooltip from './LabelTooltip';
+import LabelTooltip from '@/components/LabelTooltip';
 
 const QrCodeGenerator = () => {
   const [value, setValue] = useState('https://');
@@ -79,6 +79,10 @@ const QrCodeGenerator = () => {
     ctx.clip();
     ctx.drawImage(canvas, 0, 0); // draw original canvas on top
 
+    // // Add border:
+    // ctx.lineWidth = 4;
+    // ctx.strokeStyle = fgColor;
+    // ctx.stroke();
 
 
     const url = (borderedCanvas as HTMLCanvasElement).toDataURL('image/png');
